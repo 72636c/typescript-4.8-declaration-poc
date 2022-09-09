@@ -1,7 +1,7 @@
 {
   "scripts": {
     "build": "npm run build --workspaces",
-    "lint": "tsc --noEmit *.d.ts"
+    "lint": "tsc --noEmit"
   },
   "workspaces": [
     "4.7.4",

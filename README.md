@@ -6,24 +6,12 @@ npm install
 
 ```shell
 npm run build
-
-# > build
-# > npm run --quiet build --workspaces
-#
-#
-# > build
-# > tsc --declaration --emitDeclarationOnly --outfile ../4.7.4.d.ts ../main.ts
-#
-# > build
-# > tsc --declaration --emitDeclarationOnly --outfile ../4.8.3.d.ts ../main.ts
 ```
 
 ```shell
-npm run lint
+npm run --silent lint 4.7.4.d.ts
 
-# > lint
-# > tsc --noEmit *.d.ts
-#
+npm run --silent lint 4.8.3.d.ts
 # 4.8.3.d.ts:8:19 - error TS1005: ':' expected.
 #
 # 8     }, { function }: {
@@ -31,4 +19,28 @@ npm run lint
 #
 #
 # Found 1 error in 4.8.3.d.ts:8
+
+npm run --silent lint 50538.d.ts
+# 50538.d.ts:4:27 - error TS2300: Duplicate identifier 'conflict'.
+#
+# 4     export const main: ({ conflict }: {
+#                             ~~~~~~~~
+#
+# 50538.d.ts:6:10 - error TS2300: Duplicate identifier 'conflict'.
+#
+# 6     }, { conflict }: {
+#            ~~~~~~~~
+#
+# 50538.d.ts:8:10 - error TS2300: Duplicate identifier 'dupe'.
+#
+# 8     }, { dupe, dupe }: {
+#            ~~~~
+#
+# 50538.d.ts:8:16 - error TS2300: Duplicate identifier 'dupe'.
+#
+# 8     }, { dupe, dupe }: {
+#                  ~~~~
+#
+#
+# Found 4 errors in the same file, starting at: 50538.d.ts:4
 ```
