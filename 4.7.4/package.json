@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "typescript": "4.7.4"
+  },
+  "scripts": {
+    "build": "tsc --declaration --emitDeclarationOnly --outfile ../4.7.4.d.ts ../main.ts"
+  }
+}
